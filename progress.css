@@ -1,0 +1,403 @@
+/* Progress Page Styles */
+
+/* Progress Hero Section */
+.progress-hero {
+    padding: 120px 20px 60px;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    min-height: calc(100vh - 200px);
+}
+
+/* Completion Section */
+.completion-section {
+    margin-bottom: 40px;
+}
+
+.completion-label {
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.completion-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.completion-percentage {
+    font-size: clamp(48px, 8vw, 64px);
+    font-weight: var(--font-weight-black);
+    color: var(--primary-color);
+    line-height: 1;
+    margin: 0;
+}
+
+.next-milestone {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-medium);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-color) 0%, #4a6cf7 100%);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Phase Card */
+.phase-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.phase-badge {
+    background: rgba(57, 33, 162, 0.1);
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.phase-week {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.phase-title {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.phase-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Tasks Section */
+.tasks-section {
+    margin-bottom: 40px;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tasks-title {
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+.tasks-count {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-medium);
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-bottom: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    position: relative;
+}
+
+.task-item:first-child {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.task-item:last-child {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.task-item:only-child {
+    border-radius: var(--radius-md);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.task-item:hover {
+    background: var(--gray-50);
+}
+
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gray-300);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+    margin-top: 2px;
+}
+
+.task-checkbox i {
+    font-size: 12px;
+    color: transparent;
+    transition: all var(--transition-base);
+}
+
+.task-checkbox.checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.task-checkbox.checked i {
+    color: var(--white);
+}
+
+.task-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-name {
+    font-size: 16px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+    transition: all var(--transition-base);
+}
+
+.task-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Completed Task Styles */
+.task-item.completed .task-name {
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.task-item.completed .task-description {
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+/* In Progress Badge */
+.task-status-badge {
+    background: rgba(57, 33, 162, 0.1);
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: var(--font-weight-bold);
+    padding: 6px 12px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    align-self: center;
+}
+
+/* Help Banner */
+.help-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--gray-50);
+    border-radius: var(--radius-xl);
+    padding: 24px 32px;
+    margin-bottom: 40px;
+}
+
+.help-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.help-icon i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.help-content {
+    flex: 1;
+}
+
+.help-content h4 {
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.help-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.help-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.help-btn i {
+    font-size: 12px;
+    transition: transform var(--transition-base);
+}
+
+.help-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Progress Footer */
+.progress-footer {
+    background: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid var(--gray-200);
+}
+
+.footer-motivation {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0 0 16px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-base);
+}
+
+.footer-links a:hover {
+    color: var(--primary-dark);
+}
+
+.footer-links .separator {
+    color: var(--gray-300);
+    font-size: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .progress-hero {
+        padding: 100px 20px 40px;
+    }
+
+    .completion-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .next-milestone {
+        order: -1;
+    }
+
+    .phase-card {
+        padding: 20px 24px;
+    }
+
+    .task-item {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+    }
+
+    .task-status-badge {
+        margin-left: 40px;
+        margin-top: 8px;
+    }
+
+    .help-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .help-content {
+        text-align: center;
+    }
+
+    .help-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .completion-percentage {
+        font-size: 42px;
+    }
+
+    .phase-title {
+        font-size: 22px;
+    }
+
+    .tasks-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
